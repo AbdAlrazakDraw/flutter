@@ -77,15 +77,16 @@ Widget Photo(int index, List<images> img) {
       borderRadius: BorderRadius.circular(30),
     ),
     margin: EdgeInsets.all(8),
-    child: Container(
-      child: CachedNetworkImage(
-        imageUrl: img[index].url,
-        placeholder: (context, url) => CircularProgressIndicator(),
-        errorWidget: (context, url, error) => Icon(Icons.error),
-      ),
-      decoration: BoxDecoration(
-        color: Colors.black12,
-        borderRadius: BorderRadius.circular(30),
+    child: GridTile(
+      footer: Center(child: Text(img[index].author,style: TextStyle(fontSize: 14),)),
+      child: Container(
+        child: Image.network(
+      img[index].url,
+        ),
+        decoration: BoxDecoration(
+          color: Colors.black12,
+          borderRadius: BorderRadius.circular(30),
+        ),
       ),
     ),
   );
