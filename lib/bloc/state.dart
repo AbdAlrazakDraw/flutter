@@ -5,7 +5,8 @@ abstract class imState extends Equatable{
   @override
   List<Object> get props=>[];
 }
-class InitState extends imState{}
+class InitState extends imState{
+}
 class LoadingState extends imState{}
 class getDataState extends imState{
   List<images> img;
