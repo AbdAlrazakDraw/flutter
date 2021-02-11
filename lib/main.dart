@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     RemoteServices repository;
     return BlocProvider(
-      create: (context)=>BlocIm(InitState(),repository),
+      create: (context)=>BlocIm(InitState(),repository,true),
       child: ScreenUtilInit(
         designSize: Size(360, 690),
         allowFontScaling: false,
@@ -33,4 +33,5 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 
