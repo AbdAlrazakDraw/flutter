@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Login',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.blue,fontFamily: 'Raleway'
         ),
         home:Login(),
       ),
