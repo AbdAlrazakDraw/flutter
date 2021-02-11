@@ -16,15 +16,17 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int pageNumber;
+  int itemNumber;
   bool initial = true;
   ScrollController _scrollController = ScrollController();
 
   // -----------------------------------------------------
   @override
   void initState() {
-    pageNumber = 10;
+    pageNumber = 1;
+    itemNumber=8;
     BlocProvider.of<BlocIm>(context, listen: false)
-        .add(Fetchimages(pagesNumber: pageNumber));
+        .add(Fetchimages(itemsNumber: itemNumber,pageNumber: pageNumber));
     _scrollController.addListener(() {
       if (_scrollController.position.pixels ==
           _scrollController.position.maxScrollExtent) getMorePosts(context);
@@ -33,8 +35,9 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   getMorePosts(BuildContext context) {
-    pageNumber += 10;
-    BlocProvider.of<BlocIm>(context).add(Fetchimages(pagesNumber: pageNumber));
+    itemNumber+=8;
+
+    BlocProvider.of<BlocIm>(context).add(Fetchimages(itemsNumber: itemNumber,pageNumber: pageNumber));
   }
 
   @override
