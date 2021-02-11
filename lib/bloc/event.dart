@@ -1,8 +1,10 @@
 abstract class imEvent{}
 class getAllimageEvent extends imEvent{}
 class Fetchimages extends imEvent{
-  final int pagesNumber;
-  Fetchimages({this.pagesNumber});
+  final int itemsNumber;
+  final int pageNumber;
+  Fetchimages({this.pageNumber,this.itemsNumber});
+
   @override
-  List<Object> get props => [pagesNumber];
+  List<Object> get props => [pageNumber,itemsNumber];
 }
